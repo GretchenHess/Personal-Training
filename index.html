@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gretchen Hess — Personal Training | West Valley, Arizona</title>
+<meta name="description" content="Private personal training in West Valley HOA gyms. Corrective, intentional, athletic coaching from a triathlete RN. Train with intention. Move like you mean it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --charcoal: #2a2825;
+    --charcoal-mid: #3a3733;
+    --charcoal-soft: #4a4743;
+    --white: #ffffff;
+    --off-white: #f5f3ef;
+    --text-muted: rgba(255,255,255,0.6);
+    --text-dim: rgba(255,255,255,0.35);
+    --gold: #c49a3c;
+    --gold-light: #d4b060;
+    --gold-dim: rgba(196,154,60,0.15);
+    --border-dark: rgba(255,255,255,0.1);
+    --border-light: #e0dbd4;
+    --bg-light: #f8f6f2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--charcoal);
+    color: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(42,40,37,0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-dark);
+    padding: 0 3rem;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.01em;
+  }
+  .nav-name span { color: var(--gold); }
+  .nav-right { display: flex; align-items: center; gap: 2.5rem; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--charcoal);
+    padding: 0.65rem 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+    border-radius: 2px;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* HERO */
+  .hero {
+    padding-top: 68px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-left {
+    padding: 5rem 4rem 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--border-dark);
+    background: var(--charcoal);
+  }
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.25rem, 5vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.02;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 300;
+  }
+  .hero-rule {
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+    margin: 2rem 0;
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 400px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+  .hero-creds {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 2.75rem;
+    border: 1px solid var(--border-dark);
+  }
+  .hero-cred-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--border-dark);
+  }
+  .hero-cred-row:last-child { border-bottom: none; }
+  .cred-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .hero-cred-row span {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+  .hero-cred-row span strong {
+    color: var(--white);
+    font-weight: 600;
+  }
+  .hero-cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--charcoal);
+    padding: 1rem 2.25rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-ghost {
+    display: inline-block;
+    border: 1px solid var(--border-dark);
+    color: var(--text-muted);
+    padding: 1rem 2.25rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: var(--charcoal-mid);
+  }
+  .hero-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    opacity: 0.92;
+  }
+  .hero-right-quote {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(to top, rgba(42,40,37,0.9) 0%, transparent 100%);
+  }
+  .hero-right-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+  }
+
+  /* SECTION BASE — DARK SECTIONS */
+  .section-dark { background: var(--charcoal); padding: 5.5rem 3rem; border-top: 1px solid var(--border-dark); }
+  .section-mid { background: var(--charcoal-mid); padding: 5.5rem 3rem; border-top: 1px solid var(--border-dark); }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.25rem, 3.5vw, 3.25rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+  }
+  h2 em { font-style: italic; color: var(--gold); }
+  .section-rule {
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    margin: 1.75rem 0 2.5rem;
+    opacity: 0.7;
+  }
+
+  /* WHO I TRAIN */
+  .who-intro {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 3rem;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border-dark);
+  }
+  .who-card {
+    background: var(--charcoal-mid);
+    padding: 2.25rem;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .who-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+  .who-card:hover { background: var(--charcoal-soft); }
+  .who-card:hover::after { transform: scaleX(1); }
+  .who-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  .who-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.65; font-weight: 300; }
+
+  /* WHAT I TEACH */
+  .teach-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .teach-list { list-style: none; margin-top: 0.5rem; }
+  .teach-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-dark);
+    font-size: 0.98rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  .teach-list li:last-child { border-bottom: none; }
+  .teach-list li::before {
+    content: '—';
+    color: var(--gold);
+    font-weight: 600;
+    flex-shrink: 0;
+    font-size: 0.85rem;
+  }
+  .teach-quote {
+    border: 1px solid var(--border-dark);
+    border-left: 3px solid var(--gold);
+    padding: 2rem 2rem 2rem 1.75rem;
+    margin-bottom: 2rem;
+    background: var(--gold-dim);
+  }
+  .teach-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.55;
+  }
+  .teach-body {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .about-text p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 1.1rem;
+    font-weight: 300;
+  }
+  .about-text p:last-child { margin-bottom: 0; }
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border-dark);
+    margin-bottom: 2rem;
+  }
+  .stat-box {
+    background: var(--charcoal);
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.75rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .about-cred-list { display: flex; flex-direction: column; gap: 0; }
+  .about-cred-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--border-dark);
+    font-size: 0.85rem;
+  }
+  .about-cred-item:last-child { border-bottom: none; }
+  .about-cred-item::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+    font-size: 0.8rem;
+  }
+  .about-cred-item span { color: rgba(255,255,255,0.75); font-weight: 300; }
+
+  /* PRICING — LIGHT SECTION */
+  .section-light {
+    background: var(--bg-light);
+    padding: 5.5rem 3rem;
+    border-top: 1px solid var(--border-light);
+  }
+  .section-light .section-eyebrow { color: var(--gold); }
+  .section-light h2 { color: var(--charcoal); }
+  .section-light h2 em { color: var(--gold); }
+  .section-light .section-rule { opacity: 1; }
+  .pricing-intro {
+    font-size: 1rem;
+    color: #6b6560;
+    max-width: 520px;
+    margin-bottom: 3rem;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .price-card {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 2px;
+    padding: 2.25rem 1.75rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .price-card:hover { box-shadow: 0 12px 32px rgba(42,40,37,0.1); transform: translateY(-2px); }
+  .price-card.featured {
+    background: var(--charcoal);
+    border-color: var(--charcoal);
+  }
+  .featured-tag {
+    position: absolute;
+    top: -12px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--charcoal);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.28rem 0.85rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .price-sessions {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .price-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 0.75rem;
+  }
+  .price-card.featured h3 { color: var(--white); }
+  .price-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .price-card.featured .price-amount { color: var(--white); }
+  .price-sub { font-size: 0.78rem; color: #9a9693; margin-bottom: 0.4rem; }
+  .price-card.featured .price-sub { color: rgba(255,255,255,0.45); }
+  .price-per { font-size: 0.82rem; color: var(--gold); font-weight: 600; }
+  .pricing-note {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-left: 3px solid var(--gold);
+    padding: 1.5rem 1.75rem;
+    font-size: 0.93rem;
+    color: #6b6560;
+    line-height: 1.65;
+    border-radius: 0 2px 2px 0;
+  }
+  .pricing-note strong { color: var(--charcoal); }
+
+  /* HOW IT WORKS — LIGHT */
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+  }
+  .how-step {}
+  .how-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--border-light);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+  .how-step h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+  }
+  .how-step p { font-size: 0.88rem; color: #6b6560; line-height: 1.65; font-weight: 300; }
+
+  /* CTA — WHITE */
+  .cta-section {
+    background: var(--white);
+    padding: 6rem 3rem;
+    text-align: center;
+    border-top: 1px solid var(--border-light);
+  }
+  .cta-section .section-eyebrow { color: var(--gold); }
+  .cta-section h2 { color: var(--charcoal); font-size: clamp(2.25rem, 4vw, 3.5rem); margin-bottom: 1rem; }
+  .cta-section h2 em { color: var(--gold); }
+  .cta-section p {
+    color: #6b6560;
+    font-size: 1.05rem;
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+  .cta-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 2rem;
+  }
+  .cta-phone {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .cta-phone:hover { color: var(--gold); }
+  .cta-email { color: #9a9693; font-size: 0.9rem; text-decoration: none; transition: color 0.2s; }
+  .cta-email:hover { color: var(--gold); }
+  .cta-availability {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background: var(--charcoal);
+    color: var(--gold);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.5rem 1.25rem;
+    border-radius: 2px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal);
+    padding: 2.25rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-top: 1px solid var(--border-dark);
+  }
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+  }
+  .footer-name span { color: var(--gold); }
+  .footer-right { font-size: 0.75rem; color: var(--text-dim); text-align: right; line-height: 1.7; }
+  .footer-right a { color: rgba(255,255,255,0.35); text-decoration: none; }
+  .footer-right a:hover { color: var(--gold); }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 4rem 1.5rem; }
+    .hero-right { min-height: 380px; }
+    .section-dark, .section-mid, .section-light { padding: 3.5rem 1.5rem; }
+    .cta-section { padding: 4rem 1.5rem; }
+    .who-grid { grid-template-columns: 1fr; }
+    .teach-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-stats { grid-template-columns: repeat(2, 1fr); }
+    .pricing-grid { grid-template-columns: 1fr 1fr; }
+    .how-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    footer { flex-direction: column; text-align: center; }
+    .footer-right { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-name">Gretchen <span>Hess</span></div>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#who">Who I Train</a></li>
+      <li><a href="#teach">What I Teach</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Book a Session</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Personal Training · HOA &amp; Community Gyms · West Valley, AZ</div>
+    <h1>Train with<br>intention.<br><em>Move like<br>you mean it.</em></h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">Private, one-on-one coaching in your HOA or community gym. Corrective, athletic, and built around how your body actually works.</p>
+    <div class="hero-creds">
+      <div class="hero-cred-row">
+        <div class="cred-dot"></div>
+        <span><strong>Gretchen Hess</strong>, BSN, RN</span>
+      </div>
+      <div class="hero-cred-row">
+        <div class="cred-dot"></div>
+        <span><strong>ACE</strong> Certified Personal Trainer</span>
+      </div>
+      <div class="hero-cred-row">
+        <div class="cred-dot"></div>
+        <span><strong>Corrective Exercise</strong> &amp; Myofascial Release</span>
+      </div>
+      <div class="hero-cred-row">
+        <div class="cred-dot"></div>
+        <span><strong>Active Triathlete</strong> · 54 · Zero Medications</span>
+      </div>
+    </div>
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn-primary">Book Free Intro</a>
+      <a href="#pricing" class="btn-ghost">See Pricing</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="images/gretchen-training.jpg" alt="Gretchen Hess personal trainer">
+    <div class="hero-right-quote">
+      <p>"Most people have never been taught how to train. That's where I come in."</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHO I TRAIN -->
+<section class="section-mid" id="who">
+  <div class="container">
+    <div class="section-eyebrow">Who I Train</div>
+    <h2>You already show up.<br>Now let's make it <em>count.</em></h2>
+    <div class="section-rule"></div>
+    <p class="who-intro">Private coaching for adults who are already active and want more — better mechanics, smarter programming, and a trainer who brings a clinical eye to every session.</p>
+    <div class="who-grid">
+      <div class="who-card">
+        <h3>The Intentional Lifter</h3>
+        <p>You show up consistently but want someone to confirm your form, correct your mechanics, and build a plan that matches your actual goals — not a generic routine.</p>
+      </div>
+      <div class="who-card">
+        <h3>Managing Pain or an Old Injury</h3>
+        <p>A knee, hip, or shoulder that keeps limiting you. You want to stay active and get stronger with someone who understands anatomy and won't make it worse.</p>
+      </div>
+      <div class="who-card">
+        <h3>Ready to Level Up</h3>
+        <p>Consistent but plateaued. You want progressive, structured training that challenges you and tracks exactly where you're going.</p>
+      </div>
+      <div class="who-card">
+        <h3>Active with a Health Condition</h3>
+        <p>Managing a diagnosis or medications — and you want a trainer whose clinical background means you can push without second-guessing your safety.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I TEACH -->
+<section class="section-dark" id="teach">
+  <div class="container">
+    <div class="teach-grid">
+      <div>
+        <div class="section-eyebrow">What I Teach</div>
+        <h2>Strength training<br>is a <em>skill.</em></h2>
+        <div class="section-rule"></div>
+        <ul class="teach-list">
+          <li>Proper lifting technique and movement mechanics</li>
+          <li>Structured, progressive strength training</li>
+          <li>Corrective exercise for imbalances and pain patterns</li>
+          <li>Balance and stability training</li>
+          <li>Cardio programming using weights</li>
+          <li>Safe progression so you keep improving</li>
+          <li>Take-home plan to reinforce between sessions</li>
+        </ul>
+      </div>
+      <div>
+        <div class="teach-quote">
+          <p>"Most people walk into the gym and start lifting without knowing if they're doing it correctly. Strength training is not random exercise — it's a skill. And like any skill, it needs to be learned and practiced."</p>
+        </div>
+        <p class="teach-body">I bring a movement screen to every first session. We assess how you move before we add any load — then build from there with precision. Every session builds on the last.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section-mid" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-eyebrow">About Gretchen</div>
+        <h2>I don't just teach it.<br>I <em>live</em> it.</h2>
+        <div class="section-rule"></div>
+        <p>At 54, I'm on zero medications and training for triathlons every season. I swim, bike, run, lift, and show up to every session having done exactly what I'm asking you to do.</p>
+        <p>Eight years as an ICU nurse taught me what happens when people stop moving — and what's possible when they don't. I brought that clinical eye into my training practice because it makes every session safer, smarter, and more effective.</p>
+        <p>I notice what other trainers miss — compensation patterns, pain signals, how medications affect performance. And I adjust in real time.</p>
+      </div>
+      <div>
+        <div class="about-stats">
+          <div class="stat-box">
+            <div class="stat-num">54</div>
+            <div class="stat-label">Years Old · Zero Meds</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">8+</div>
+            <div class="stat-label">Years ICU Nursing</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">ACE</div>
+            <div class="stat-label">Certified Trainer</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">1:1</div>
+            <div class="stat-label">Always Private</div>
+          </div>
+        </div>
+        <div class="about-cred-list">
+          <div class="about-cred-item"><span>BSN, RN — ICU, Pre-Op, PACU</span></div>
+          <div class="about-cred-item"><span>ACE Certified Personal Trainer</span></div>
+          <div class="about-cred-item"><span>Corrective Exercise Specialist</span></div>
+          <div class="about-cred-item"><span>Myofascial Release Training</span></div>
+          <div class="about-cred-item"><span>Active triathlete — competing every season</span></div>
+          <div class="about-cred-item"><span>Goodyear · Litchfield Park · Avondale HOA gyms</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section-light" id="pricing">
+  <div class="container">
+    <div class="section-eyebrow">Investment</div>
+    <h2>Simple, transparent <em>pricing.</em></h2>
+    <div class="section-rule"></div>
+    <p class="pricing-intro">All sessions are private and one-on-one at your HOA or community gym. No contracts. Cash, Zelle, and Venmo accepted.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-sessions">Single</div>
+        <h3>Drop-In</h3>
+        <div class="price-amount">$95</div>
+        <div class="price-sub">Per session</div>
+        <div class="price-per">Try it first</div>
+      </div>
+      <div class="price-card">
+        <div class="price-sessions">4 Sessions</div>
+        <h3>Jumpstart</h3>
+        <div class="price-amount">$300</div>
+        <div class="price-sub">One month</div>
+        <div class="price-per">$75 / session</div>
+      </div>
+      <div class="price-card featured">
+        <div class="featured-tag">Most Popular</div>
+        <div class="price-sessions">8 Sessions</div>
+        <h3>Momentum</h3>
+        <div class="price-amount">$560</div>
+        <div class="price-sub">Two months</div>
+        <div class="price-per">$70 / session</div>
+      </div>
+      <div class="price-card">
+        <div class="price-sessions">12 Sessions</div>
+        <h3>Committed</h3>
+        <div class="price-amount">$780</div>
+        <div class="price-sub">Three months</div>
+        <div class="price-per">$65 / session</div>
+      </div>
+    </div>
+    <div class="pricing-note">
+      <strong>Not sure where to start?</strong> Book a free 30-minute intro session. We'll assess your movement, talk through your goals, and you'll walk away with something useful — no purchase required.
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section-light" style="border-top: 1px solid var(--border-light); padding-top: 0;">
+  <div class="container" style="border-top: 1px solid var(--border-light); padding-top: 5.5rem;">
+    <div class="section-eyebrow">The Process</div>
+    <h2>What working with me<br><em>looks like.</em></h2>
+    <div class="section-rule"></div>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">01</div>
+        <h3>Free Intro Session</h3>
+        <p>30 minutes. Movement assessment, goal conversation, and a clear picture of what training with me looks like. No pressure, no purchase required.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">02</div>
+        <h3>Movement Screen</h3>
+        <p>Every client starts here. I identify compensations and pain patterns before we add load — so we build on a solid foundation from day one.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">03</div>
+        <h3>Progressive Training</h3>
+        <p>Structured sessions built around your mechanics and goals. I cue in real time and track everything so every session builds on the last.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">04</div>
+        <h3>Take-Home Plan</h3>
+        <p>You leave every session with specific exercises to reinforce between sessions. Progress doesn't stop when I leave the room.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA — WHITE BREATHING ROOM -->
+<section class="cta-section" id="contact">
+  <div class="section-eyebrow">Get Started</div>
+  <h2>Ready to train with <em>intention?</em></h2>
+  <p>Call or text to book your free 30-minute intro session. I respond personally — usually within a few hours.</p>
+  <a href="tel:9136056275" class="btn-primary">Call or Text Gretchen</a>
+  <div class="cta-contact">
+    <a href="tel:9136056275" class="cta-phone">(913) 605-6275</a>
+    <a href="mailto:HealthSpanRN@gmail.com" class="cta-email">HealthSpanRN@gmail.com</a>
+    <div class="cta-availability">Limited Availability · West Valley, AZ</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Gretchen <span>Hess</span>, BSN, RN, ACE-CPT</div>
+  <div class="footer-right">
+    Personal Training · West Valley, Arizona<br>
+    <a href="mailto:HealthSpanRN@gmail.com">HealthSpanRN@gmail.com</a> · (913) 605-6275<br>
+    <span style="font-size:0.68rem; opacity:0.5; font-style:italic;">*Personal training services only. This is not a healthcare service offering.</span>
+  </div>
+</footer>
+
+</body>
+</html>
