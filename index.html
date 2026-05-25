@@ -88,6 +88,33 @@
     font-weight: 800 !important;
   }
 
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
   /* ── HERO ── */
   .hero {
     background: var(--navy);
@@ -769,6 +796,35 @@
     margin-top: 8px;
   }
 
+  /* ── HAMBURGER MENU ── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 101;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
   /* ════════════════════════════════════════════════════════════════
      MOBILE RESPONSIVE — Three breakpoints
      ════════════════════════════════════════════════════════════════ */
@@ -792,8 +848,39 @@
     }
 
     .nav-logo { font-size: 16px; }
-    .nav-links { gap: 16px; }
-    .nav-links a { font-size: 11px; letter-spacing: 1px; }
+    
+    .hamburger { display: flex; }
+
+    .nav-links {
+      position: fixed;
+      top: 56px;
+      left: 0;
+      right: 0;
+      background: var(--navy-dark);
+      flex-direction: column;
+      gap: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0;
+    }
+
+    .nav-links.active {
+      max-height: 400px;
+      padding: 20px 0;
+    }
+
+    .nav-links li {
+      text-align: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links a { 
+      font-size: 11px; 
+      letter-spacing: 1px; 
+      display: block;
+    }
 
     /* HERO */
     .hero {
@@ -1067,7 +1154,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">GRETCHEN <span>HESS</span></div>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navLinks">
     <li><a href="#who">Who I Train</a></li>
     <li><a href="#teach">What I Teach</a></li>
     <li><a href="#about">About</a></li>
@@ -1075,6 +1162,11 @@
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#contact" class="nav-cta">Start Free</a></li>
   </ul>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -1325,6 +1417,25 @@
   </div>
   <div class="footer-disclaimer">Personal training services only.<br>This is not a healthcare service offering.</div>
 </footer>
+
+<script>
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
+  });
+</script>
 
 </body>
 </html>
