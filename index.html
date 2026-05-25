@@ -118,123 +118,252 @@
   /* ── HERO ── */
   .hero {
     background: var(--navy);
-    padding: 120px 52px 80px;
+    padding: 0;
     display: flex;
-    align-items: center;
-    gap: 60px;
-    min-height: 100vh;
+    flex-direction: column;
+    min-height: auto;
     position: relative;
     overflow: hidden;
+    margin-top: 60px;
   }
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(245,197,24,0.06) 0%, transparent 70%);
-    pointer-events: none;
+  /* Hero Header with Name & Portrait */
+  .hero-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 52px;
+    gap: 40px;
   }
 
-  .hero-text { flex: 1; z-index: 1; }
+  .hero-name-block {
+    flex: 1;
+  }
 
-  .hero-eyebrow {
+  .hero-name {
     font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--yellow);
-    margin-bottom: 20px;
-  }
-
-  .hero-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 64px;
+    font-size: 48px;
     font-weight: 900;
-    line-height: 1.05;
     color: var(--white);
-    letter-spacing: -1px;
-    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    margin-bottom: 12px;
   }
 
-  .hero-title span { color: var(--yellow); }
+  .hero-name span {
+    color: var(--yellow);
+  }
 
-  .hero-subtitle {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+  .hero-creds {
+    font-size: 14px;
     font-weight: 600;
     color: var(--blue-accent);
-    margin-bottom: 28px;
+    line-height: 1.6;
     letter-spacing: 0.3px;
   }
 
-  .hero-desc {
-    font-size: 17px;
-    line-height: 1.75;
-    color: rgba(255,255,255,0.8);
-    font-weight: 300;
-    max-width: 520px;
-    margin-bottom: 36px;
+  .hero-portrait {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
   }
 
-  .hero-desc strong {
-    color: var(--white);
-    font-weight: 700;
+  .hero-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
-  .hero-buttons {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary {
+  /* Yellow Divider */
+  .hero-divider {
+    height: 6px;
     background: var(--yellow);
+    margin: 0;
+  }
+
+  /* Hero Main Content */
+  .hero-content {
+    background: var(--off-white);
+    padding: 52px;
+  }
+
+  .hero-questions {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
     color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 28px;
+  }
+
+  .hero-questions-line {
+    margin-bottom: 12px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 24px;
+    max-width: 900px;
+  }
+
+  .hero-description p {
+    margin-bottom: 16px;
+  }
+
+  .hero-description strong {
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .hero-description em {
+    font-style: italic;
+  }
+
+  /* Foundation Pillars */
+  .hero-pillars {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 32px 0;
+    padding: 28px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pillar-badge {
+    background: var(--navy);
+    color: var(--yellow);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    border-radius: 20px;
+    display: inline-block;
+  }
+
+  /* Two-Column Section */
+  .hero-two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 32px 0;
+    padding: 0;
+  }
+
+  .hero-column {
+    padding: 0;
+  }
+
+  .hero-column-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    padding: 14px 28px;
-    border-radius: 3px;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.1s;
+    color: var(--navy);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--navy);
     display: inline-block;
   }
 
-  .btn-primary:hover {
-    background: var(--yellow-light);
-    transform: translateY(-1px);
+  .hero-column-list {
+    list-style: none;
   }
 
-  .btn-secondary {
-    background: transparent;
-    color: var(--white);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 14px 28px;
-    border-radius: 3px;
-    border: 2px solid rgba(255,255,255,0.3);
-    text-decoration: none;
-    transition: border-color 0.2s;
-    display: inline-block;
-  }
-
-  .btn-secondary:hover { border-color: var(--yellow); color: var(--yellow); }
-
-  .hero-stats {
+  .hero-column-item {
     display: flex;
-    gap: 32px;
-    margin-top: 48px;
-    padding-top: 32px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text);
+  }
+
+  .hero-column-icon {
+    width: 20px;
+    height: 20px;
+    background: var(--navy);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* CTA Banner */
+  .hero-cta-banner {
+    background: var(--yellow);
+    padding: 40px 52px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .hero-cta-text h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .hero-cta-text p {
+    font-size: 15px;
+    color: var(--navy);
+    line-height: 1.6;
+  }
+
+  .hero-cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .hero-cta-button {
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 16px 28px;
+    border-radius: 3px;
+    transition: all 0.2s;
+    display: block;
+  }
+
+  .hero-cta-button.primary {
+    background: var(--navy);
+    color: var(--yellow);
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  .hero-cta-button.primary:hover {
+    background: var(--navy-dark);
+    transform: translateY(-2px);
+  }
+
+  .hero-cta-button.secondary {
+    background: transparent;
+    color: var(--navy);
+    font-size: 13px;
+    border: 2px solid var(--navy);
+    text-transform: uppercase;
+  }
+
+  .hero-cta-button.secondary:hover {
+    background: var(--navy);
+    color: var(--yellow);
   }
 
   .stat-item { text-align: center; }
@@ -884,64 +1013,85 @@
 
     /* HERO */
     .hero {
-      padding: 80px 20px 40px;
+      padding: 0;
+    }
+
+    .hero-header {
       flex-direction: column;
-      min-height: auto;
+      padding: 28px 20px;
       text-align: center;
-      gap: 28px;
+      gap: 20px;
     }
 
-    .hero::before {
-      width: 400px;
-      height: 400px;
-      top: -50px;
-      right: -150px;
+    .hero-name {
+      font-size: 32px;
+      margin-bottom: 8px;
     }
 
-    .hero-title {
-      font-size: 36px;
-      line-height: 1.1;
-      margin-bottom: 12px;
-    }
-
-    .hero-subtitle {
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
-
-    .hero-desc {
-      font-size: 15px;
-      max-width: 100%;
-      margin-bottom: 24px;
-    }
-
-    .hero-buttons {
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .btn-primary, .btn-secondary {
-      width: 100%;
-      padding: 12px 20px;
+    .hero-creds {
       font-size: 12px;
     }
 
-    .hero-stats {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 32px;
-      padding-top: 24px;
+    .hero-portrait {
+      width: 110px;
+      height: 110px;
     }
 
-    .stat-item { flex: 0 0 calc(50% - 10px); }
-
-    .hero-photo {
-      width: 240px;
-      height: 240px;
+    .hero-content {
+      padding: 28px 20px;
     }
 
-    /* SECTIONS */
+    .hero-questions {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      font-size: 14px;
+    }
+
+    .hero-pillars {
+      gap: 8px;
+      margin: 24px 0;
+      padding: 20px 0;
+    }
+
+    .pillar-badge {
+      font-size: 10px;
+      padding: 8px 14px;
+    }
+
+    .hero-two-column {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin: 24px 0;
+    }
+
+    .hero-column-title {
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    .hero-column-item {
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .hero-cta-banner {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 24px 20px;
+    }
+
+    .hero-cta-text h3 {
+      font-size: 24px;
+    }
+
+    .hero-cta-text p {
+      font-size: 14px;
+    }
+
+    /* REST OF SECTIONS */
     section { padding: 48px 20px; }
 
     .section-eyebrow { font-size: 9px; padding: 3px 10px; margin-bottom: 12px; }
@@ -1107,23 +1257,68 @@
     nav { padding: 0 16px; }
     section { padding: 36px 16px; }
 
-    .hero {
-      padding: 60px 16px 32px;
-      gap: 20px;
+    /* HERO */
+    .hero-header {
+      padding: 16px 16px;
     }
 
-    .hero-title {
-      font-size: 28px;
+    .hero-name {
+      font-size: 24px;
     }
 
-    .hero-subtitle { font-size: 14px; }
-    .hero-desc { font-size: 14px; margin-bottom: 16px; }
-    .hero-photo { width: 180px; height: 180px; }
-    .hero-stats { margin-top: 24px; padding-top: 16px; }
-    .stat-item { flex: 0 0 calc(50% - 8px); }
-    .stat-num { font-size: 20px; }
-    .stat-label { font-size: 10px; }
+    .hero-creds {
+      font-size: 11px;
+    }
 
+    .hero-portrait {
+      width: 90px;
+      height: 90px;
+    }
+
+    .hero-content {
+      padding: 16px 16px;
+    }
+
+    .hero-questions {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    .hero-description {
+      font-size: 13px;
+    }
+
+    .hero-pillars {
+      gap: 6px;
+      margin: 16px 0;
+      padding: 16px 0;
+    }
+
+    .pillar-badge {
+      font-size: 9px;
+      padding: 6px 12px;
+    }
+
+    .hero-two-column {
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    .hero-cta-banner {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .hero-cta-text h3 {
+      font-size: 20px;
+    }
+
+    .hero-cta-text p {
+      font-size: 13px;
+    }
+
+    /* REST */
     .section-title { font-size: 22px; }
     .section-intro { font-size: 14px; margin-bottom: 24px; }
     .hook-heading { font-size: 18px; }
@@ -1171,36 +1366,126 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-text">
-    <div class="hero-eyebrow">Personal Training</div>
-    <div class="hero-title">Train With <span>Intention.</span></div>
-    <div class="hero-subtitle">Strength coaching from a triathlete RN</div>
-    <p class="hero-desc">One-on-one training at your HOA gym. Proper form. Corrective exercise. Results that last — no shortcuts, no excuses.</p>
-    <div class="hero-buttons">
-      <a href="https://gretchenhess.com/book" class="btn-primary">Book Free Session</a>
-      <a href="tel:9136056275" class="btn-secondary">Call 913-605-6275</a>
+  <!-- Header with Name & Portrait -->
+  <div class="hero-header">
+    <div class="hero-name-block">
+      <div class="hero-name">GRETCHEN <span>HESS</span></div>
+      <div class="hero-creds">
+        BSN, RN · ACE Certified Personal Trainer<br>
+        Corrective Exercise Specialist · Competitive Triathlete
+      </div>
     </div>
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num">54</div>
-        <div class="stat-label">Years Old<br>Zero Meds</div>
+    <div class="hero-portrait">
+      <img src="gretchen-portrait.jpg" alt="Gretchen Hess">
+    </div>
+  </div>
+
+  <div class="hero-divider"></div>
+
+  <!-- Main Content -->
+  <div class="hero-content">
+    <!-- Questions -->
+    <div class="hero-questions">
+      <div class="hero-questions-line">Are You Lifting Safely and Getting Results?</div>
+      <div class="hero-questions-line">Are You Working Out With Intention?</div>
+    </div>
+
+    <!-- Description -->
+    <div class="hero-description">
+      <p><strong>Intentional Training</strong> starts with identifying your goal, understanding what's standing in your way, and executing a plan designed specifically for you.</p>
+      <p>Most people walk into the gym and start using machines or lifting weights without really knowing what their goal is — or if they're doing it correctly. <strong>Strength training is not random exercise. It's a <em>skill</em></strong> — and like any skill, it needs to be learned and practiced.</p>
+      <p><strong>Proper lifting technique</strong> is the foundation for:</p>
+    </div>
+
+    <!-- Foundation Pillars -->
+    <div class="hero-pillars">
+      <span class="pillar-badge">Strength</span>
+      <span class="pillar-badge">Balance</span>
+      <span class="pillar-badge">Stability</span>
+      <span class="pillar-badge">Injury Prevention</span>
+      <span class="pillar-badge">Your Goals</span>
+    </div>
+
+    <!-- Two Column Section -->
+    <div class="hero-two-column">
+      <div class="hero-column">
+        <div class="hero-column-title">What I Teach</div>
+        <ul class="hero-column-list">
+          <li class="hero-column-item">
+            <div class="hero-column-icon"></div>
+            <span>Proper lifting technique</span>
+          </li>
+          <li class="hero-column-item">
+            <div class="hero-column-icon"></div>
+            <span>Structured strength training</span>
+          </li>
+          <li class="hero-column-item">
+            <div class="hero-column-icon"></div>
+            <span>Cardio workouts using weights</span>
+          </li>
+          <li class="hero-column-item">
+            <div class="hero-column-icon"></div>
+            <span>Balance and stability training</span>
+          </li>
+          <li class="hero-column-item">
+            <div class="hero-column-icon"></div>
+            <span>Safe progression so you keep improving</span>
+          </li>
+        </ul>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">8+</div>
-        <div class="stat-label">Years ICU<br>Nursing</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">ACE</div>
-        <div class="stat-label">Certified<br>Trainer</div>
+      <div class="hero-column">
+        <div class="hero-column-title">Who This Is For</div>
+        <div style="font-size: 14px; color: var(--navy); margin-bottom: 16px; font-weight: 600;">Adults of all ages & teens 14+<br><span style="font-weight: 400; color: var(--text-mid);">(with parental consent)</span></div>
+        <ul class="hero-column-list">
+          <li class="hero-column-item">
+            <div class="hero-column-icon"></div>
+            <span>Feel stronger, more capable, and confident</span>
+          </li>
+          <li class="hero-column-item">
+            <div class="hero-column-icon"></div>
+            <span>Improve balance and stability</span>
+          </li>
+          <li class="hero-column-item">
+            <div class="hero-column-icon"></div>
+            <span>Prevent injuries as you age</span>
+          </li>
+          <li class="hero-column-item">
+            <div class="hero-column-icon"></div>
+            <span>Train with accountability and purpose</span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
-  <div class="hero-photo">
-    <img src="gretchen-portrait.jpg" alt="Gretchen Hess">
+
+  <!-- Background Section (My Background) -->
+  <div style="background: var(--navy); padding: 24px 52px; text-align: center;">
+    <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--yellow); margin-bottom: 12px;">My Background</div>
+    <div style="font-size: 14px; color: var(--blue-accent); line-height: 1.8;">
+      ✦ Collegiate basketball scholarship ✦ Competitive triathlete ✦ Lifelong strength trainer<br>
+      ✦ RN — ICU & Pre-Op/PACU
+    </div>
+  </div>
+
+  <!-- CTA Banner -->
+  <div class="hero-cta-banner">
+    <div class="hero-cta-text">
+      <h3>Free 45-Min First Session</h3>
+      <p>Meet one-on-one to talk through your goals, followed by a 30-minute baseline assessment workout. No pressure — just a clear starting point.</p>
+    </div>
+    <div class="hero-cta-buttons">
+      <a href="tel:9136056275" class="hero-cta-button primary">Call or Text 913-605-6275</a>
+      <a href="https://gretchenhess.com/book" class="hero-cta-button primary" style="background: var(--navy); color: var(--yellow);">Book Your First Session</a>
+    </div>
+  </div>
+
+  <!-- Footer Tagline -->
+  <div style="background: var(--navy); padding: 20px 52px; text-align: center;">
+    <div style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--yellow);">
+      Protect Your HealthSpan — Not Just Your LifeSpan
+    </div>
   </div>
 </section>
-
-<div class="yellow-bar"></div>
 
 <!-- WHO I TRAIN -->
 <section class="who-section" id="who">
@@ -1403,8 +1688,8 @@
   <div class="cta-heading">Ready to train with intention?</div>
   <p class="cta-sub">Book your free 45-minute first session. Talk through your goals, complete a baseline assessment, and leave with a clear starting point.</p>
   <div class="cta-contact-row">
-    <a href="https://gretchenhess.com" class="btn-cta">Book at gretchenhess.com</a>
     <a href="tel:9136056275" class="cta-contact-item">📱 913-605-6275</a>
+    <a href="https://gretchenhess.com/book" class="btn-cta">Book Your First Session</a>
   </div>
 </section>
 
