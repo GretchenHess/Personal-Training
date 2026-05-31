@@ -786,6 +786,33 @@
     letter-spacing: 0.5px;
   }
 
+  .pricing-btn {
+    display: block;
+    margin-top: 18px;
+    padding: 12px 20px;
+    background: var(--navy);
+    color: var(--yellow);
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .pricing-btn:hover {
+    background: var(--yellow);
+    color: var(--navy);
+  }
+  .pricing-card.featured .pricing-btn {
+    background: var(--yellow);
+    color: var(--navy);
+  }
+  .pricing-card.featured .pricing-btn:hover {
+    background: var(--navy);
+    color: var(--yellow);
+  }
+
   /* ── PROCESS ── */
   .process-section { background: var(--light-blue); }
 
@@ -1355,7 +1382,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#approach">My Approach</a></li>
     <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#contact" class="nav-cta">Start Free</a></li>
+    <li><a href="https://buy.stripe.com/eVqaEW2Lm7jO4tAfP9b7y04" class="nav-cta" target="_blank">Start Free</a></li>
   </ul>
   <div class="hamburger" id="hamburger">
     <span></span>
@@ -1476,7 +1503,7 @@
     </div>
     <div class="hero-cta-buttons">
       <a href="tel:9136056275" class="hero-cta-button primary">Call or Text 913-605-6275</a>
-      <a href="https://gretchenhess.com/book" class="hero-cta-button primary" style="background: var(--navy); color: var(--yellow);">Book Your First Session</a>
+      <a href="https://buy.stripe.com/eVqaEW2Lm7jO4tAfP9b7y04" class="hero-cta-button primary" style="background: var(--navy); color: var(--yellow);" target="_blank">Book Your First Session</a>
     </div>
   </div>
 
@@ -1509,6 +1536,9 @@
       <div class="who-card-title">Active with a Health Condition</div>
       <div class="who-card-body">Managing a diagnosis or medications — and you want a trainer whose clinical background means you can push without second-guessing your safety.</div>
     </div>
+  </div>
+  <div style="text-align:center; margin-top: 40px;">
+    <a href="https://buy.stripe.com/eVqaEW2Lm7jO4tAfP9b7y04" class="hero-cta-button primary" target="_blank">Start with a Free First Session</a>
   </div>
 </section>
 
@@ -1549,6 +1579,9 @@
       <div class="teach-body">You leave every session with specific work to reinforce between sessions. Progress doesn't stop when I leave.</div>
     </div>
   </div>
+  <div style="text-align:center; margin-top: 40px;">
+    <a href="https://buy.stripe.com/eVqaEW2Lm7jO4tAfP9b7y04" class="hero-cta-button primary" style="background: var(--yellow); color: var(--navy);" target="_blank">Start with a Free First Session</a>
+  </div>
 </section>
 
 <!-- ABOUT -->
@@ -1588,6 +1621,9 @@
       </div>
     </div>
   </div>
+  <div style="text-align:center; margin-top: 40px;">
+    <a href="https://buy.stripe.com/eVqaEW2Lm7jO4tAfP9b7y04" class="hero-cta-button primary" target="_blank">Book Your Free First Session</a>
+  </div>
 </section>
 
 <!-- APPROACH -->
@@ -1618,7 +1654,7 @@
 <section class="pricing-section" id="pricing">
   <div class="section-eyebrow">Investment</div>
   <div class="section-title">Simple, transparent <em>pricing.</em></div>
-  <p class="section-intro">All sessions are private and one-on-one at your HOA or community gym. No contracts. Cash, Zelle, and Venmo accepted.</p>
+  <p class="section-intro">All sessions are private and one-on-one at your HOA or community gym. No contracts. Cash, Venmo, and online payment accepted.</p>
   <div class="pricing-grid">
     <div class="pricing-card">
       <div class="pricing-sessions">Single Session</div>
@@ -1627,6 +1663,7 @@
       <div class="pricing-per">Per session</div>
       <div class="pricing-divider"></div>
       <div class="pricing-detail">Try it first</div>
+      <a href="https://buy.stripe.com/14AcN4adO0Vq6BIcCXb7y00" class="pricing-btn" target="_blank">Book Drop-In</a>
     </div>
     <div class="pricing-card featured">
       <div class="pricing-badge">Most Popular</div>
@@ -1636,6 +1673,7 @@
       <div class="pricing-per"><strong>$75</strong> / session · One month</div>
       <div class="pricing-divider"></div>
       <div class="pricing-detail">Build the foundation</div>
+      <a href="https://buy.stripe.com/6oUeVc1Hi0Vq7FM6ezb7y02" class="pricing-btn" target="_blank">Book Jumpstart</a>
     </div>
     <div class="pricing-card">
       <div class="pricing-sessions">8 Sessions</div>
@@ -1644,6 +1682,7 @@
       <div class="pricing-per"><strong>$70</strong> / session · Two months</div>
       <div class="pricing-divider"></div>
       <div class="pricing-detail">Build real habits</div>
+      <a href="https://buy.stripe.com/8x214mfy8cE82ls7iDb7y03" class="pricing-btn" target="_blank">Book Momentum</a>
     </div>
     <div class="pricing-card">
       <div class="pricing-sessions">12 Sessions</div>
@@ -1652,6 +1691,7 @@
       <div class="pricing-per"><strong>$65</strong> / session · Three months</div>
       <div class="pricing-divider"></div>
       <div class="pricing-detail">Transform your training</div>
+      <a href="https://buy.stripe.com/9B614m1Hi6fK4tA0Ufb7y01" class="pricing-btn" target="_blank">Book Committed</a>
     </div>
   </div>
 </section>
@@ -1690,7 +1730,7 @@
   <p class="cta-sub">Book your free 45-minute first session. Talk through your goals, complete a baseline assessment, and leave with a clear starting point.</p>
   <div class="cta-contact-row">
     <a href="tel:9136056275" class="cta-contact-item">📱 913-605-6275</a>
-    <a href="https://gretchenhess.com/book" class="btn-cta">Book Your First Session</a>
+    <a href="https://buy.stripe.com/eVqaEW2Lm7jO4tAfP9b7y04" class="btn-cta" target="_blank">Book Your First Session</a>
   </div>
 </section>
 
